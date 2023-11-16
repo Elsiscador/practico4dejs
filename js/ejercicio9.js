@@ -4,6 +4,10 @@ Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura,
 Los métodos que se debe poder utilizar  son:
 mostrarGeneracion: este método debe mostrar un mensaje indicando a qué generación pertenece la persona creada y cual es el rasgo característico de esta generación.
 Para realizar este método tener en cuenta la siguiente tabla de generaciones:
+esMayorDeEdad: indica si es mayor de edad, devuelve un mensaje indicando que la persona es mayor de edad.
+mostrarDatos: devuelve toda la información del objeto.
+generaDNI(): genera un número aleatorio de 8 cifras.
+
 
 */
 
@@ -49,8 +53,31 @@ class Persona {
   
       console.log(`En España, hay aproximadamente 47 millones de personas de la generación ${generacion}.`);
     }
+    esMayorDeEdad() {
+      return this.edad >= 18;
+    }
+  
+    mostrarDatos() {
+      console.log(`Nombre: ${this.nombre}`);
+      console.log(`Edad: ${this.edad} años`);
+      console.log(`DNI: ${this.dni}`);
+      console.log(`Sexo: ${this.sexo}`);
+      console.log(`Peso: ${this.peso} kg`);
+      console.log(`Altura: ${this.altura} m`);
+      console.log(`Año de Nacimiento: ${this.ano_nacimiento}`);
+      this.mostrarGeneracion();
+      console.log(`Es mayor de edad: ${this.esMayorDeEdad() ? 'Sí' : 'No'}`);
+    }
+  
+    generaDNI() {
+
+      return Math.floor(Math.random() * 90000000) + 10000000;
+    }
   }
   
-  const personaEjemplo = new Persona("cesar", 30, "273456789", "H", 70, 1.75, 1990);
-  personaEjemplo.mostrarGeneracion();
-  
+  //const personaEjemplo = new Persona("cesar", 30, "273456789", "H", 70, 1.75, 1990);
+  //personaEjemplo.mostrarGeneracion();
+
+  const personaEjemplo = new Persona("Juan", 30, 37987344, "H", 70, 1.75, 1990);
+
+personaEjemplo.mostrarDatos();
