@@ -34,5 +34,5 @@ function regitrosDeLibros(){
         return " no hay libros disponibles"
     }
 }
-console.log(verificarDisponibilidad("el señor de los anillos"))
+console.log(verificarDisponibilidad("la mirada de un ciego"))
 console.log(` Los libros disponibles son los siguientes: ${regitrosDeLibros()}`)
